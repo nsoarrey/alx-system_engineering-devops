@@ -8,3 +8,4 @@ Write a script that displays all users and their home directories, sorted by use
 Based on the the /etc/passwd file\n
 Write a script that reverse its input.\n
 Create a script that removes all letters c and C from input.\n
+Replace all characters A and c from input to Z and e respectively\n
