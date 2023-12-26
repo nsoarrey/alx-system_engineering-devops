@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#displays a messaf=ge 10 times
+
 for m in {1..10}; #((i=1; i<=10; i++));
 do
 	echo "Best school"
