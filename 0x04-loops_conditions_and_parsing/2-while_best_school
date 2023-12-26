@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+name="Best School"
+i=1
+while((i <= 10));
+do
+    echo $name
+    ((i++))
+done
