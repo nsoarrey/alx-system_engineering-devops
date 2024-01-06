@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Check if running in Docker by examining cgroup information
 if [ -f /.dockerenv ]; then
     # Modify /etc/hosts file to change localhost IP
