@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-# Check if running in Docker (check for the presence of /.dockerenv)
+
+# Check if running in Docker by examining cgroup information
 if [ -f /.dockerenv ]; then
-    # Modify /etc/hosts file
-    sudo sed -i 's/^127\.0\.0\.1[[:space:]]localhost$/127.0.0.2 localhost/' /etc/hosts
-    echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
+    # Modify /etc/hosts file to change localhost IP
+    sudo sed -i '/^127\.0\.0\.1[[:space:]]localhost$/c\127.0.0.2 localhost' /etc/hosts
+
+    # Check if facebook.com entry exists, if not, add it
+    grep -q "facebook.com" /etc/hosts || echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
 fi
