@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-
-# Using hostname and grep to get IPv4 addresses
-ipv4_addresses=$(hostname -I | tr ' ' '\n' | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$')
+# Using ifconfig to get IPv4 addresses including localhost
+ipv4_addresses=$(ifconfig | awk '/inet / {gsub("addr:","",$2); print $2}')
 
 # Displaying active IPv4 addresses
 echo "Active IPv4 addresses on this machine:"

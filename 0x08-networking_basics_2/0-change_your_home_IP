@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-
-# Using 'ip' command to get IPv4 addresses
-ipv4_addresses=$(ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-
-# Displaying active IPv4 addresses
-echo "Active IPv4 addresses on this machine:"
-echo "$ipv4_addresses"
+# Check if running in Docker (check for the presence of /.dockerenv)
+if [ -f /.dockerenv ]; then
+    # Modify /etc/hosts file
+    echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+    echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
+    echo "Hosts file updated successfully."
+else
+    echo "This script is meant to run in Docker. Aborting."
+fi
