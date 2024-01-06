@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Using 'ip' command to get IPv4 addresses
+ipv4_addresses=$(ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+
+# Displaying active IPv4 addresses
+echo "Active IPv4 addresses on this machine:"
+echo "$ipv4_addresses"
