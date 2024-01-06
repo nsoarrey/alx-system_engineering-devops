@@ -2,7 +2,7 @@
 # Check if running in Docker by examining cgroup information
 if [ -f /.dockerenv ]; then
     # Modify /etc/hosts file to change localhost IP
-    sudo sed -i '/^127\.0\.0\.1[[:space:]]localhost$/c\127.0.0.2 localhost'\
+    sudo sed -i 's/^127\.0\.0\.1[[:space:]]localhost$/127.0.0.2 localhost/'\
 	 /etc/hosts
 
     # Check if facebook.com entry exists, if not, add it
