@@ -1,0 +1,43 @@
+Sure, here's a blog post explaining what happens when you type [https://www.google.com](https://www.google.com) in your browser and press Enter:
+
+**Behind the Scenes: Your Journey to Google**
+
+Have you ever wondered what happens in the blink of an eye when you type a URL in your browser and press Enter? It all boils down to a complex but fascinating interplay between various technologies. Let's delve into the journey from your browser to the Google search results page.
+
+**Act 1: The DNS Lookup**
+
+The domain name system (DNS) acts like the internet's phonebook. When you type "[https://www.google.com](https://www.google.com)," your browser doesn't understand this address. It needs an IP address, a unique numerical label that identifies computers on the network. So, your browser sends a DNS request to a DNS server, asking it to translate "[www.google.com](https://www.google.com)" into an IP address.
+
+**Act 2: TCP/IP Takes the Wheel**
+
+Once the DNS server returns the IP address (let's say it's 142.250.184.196), your browser uses the Transmission Control Protocol/Internet Protocol (TCP/IP) suite to communicate with Google's servers. TCP ensures reliable data delivery by breaking down large data packets into smaller ones, acknowledging their receipt, and retransmitting any missing packets. IP acts like the addressing system, directing the data packets to the correct destination IP address.
+
+**Act 3: The Firewall - Guardian at the Gate**
+
+The data packets now reach Google's network. A firewall, a security guard, examines them to ensure they originate from a trusted source and don't contain malicious content. If everything checks out, the packets are allowed through.
+
+**Act 4: Securing the Connection with HTTPS/SSL**
+
+When you see the padlock icon and "https" in the address bar, it signifies a secure connection. The Hypertext Transfer Protocol Secure (HTTPS) relies on Secure Sockets Layer (SSL) to encrypt communication between your browser and Google's servers. This encryption scrambles the data, making it unreadable to anyone trying to intercept it, protecting your privacy and sensitive information.
+
+**Act 5: Load Balancing - Distributing the Workload**
+
+Large websites like Google often employ load balancers. These act like traffic directors, distributing incoming requests from users across multiple web servers. This ensures smooth performance and prevents any single server from getting overloaded.
+
+**Act 6: The Web Server - Delivering the Content**
+
+The load balancer directs your request to a web server. The web server retrieves the necessary web pages and resources from the backend, which might involve...
+
+**Act 7: The Application Server (optional)**
+
+For complex websites, an application server might be involved. It handles dynamic content generation, interacting with databases and processing user requests before delivering them to the web server.
+
+**Act 8: The Database (optional)**
+
+Many websites rely on databases to store information. If your search query requires fetching data from a database, the web server or application server would communicate with the database to retrieve it.
+
+**Act 9: Rendering the Page and Voila!**
+
+Finally, the web server transmits the requested web pages and resources back to your browser. Your browser interprets and renders this data, displaying the familiar Google search results page on your screen.
+
+This is a simplified explanation, but it captures the essence of what happens behind the scenes when you visit a website. It's a remarkable feat of technology working together seamlessly to bring you the information you seek at lightning speed.
