@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install nginx if not already installed
+if ! command -v nginx &> /dev/null; then
+    apt-get update
+    apt-get install -y nginx
+fi
+
+# Stop nginx if it's running
+service nginx stop
+
+# Set nginx to listen on port 8080
+sed -i 's/^\s*listen\s*80;/    listen 8080;/g' /etc/nginx/sites-available/default
+
+# Set nginx to run as nginx user
+sed -i 's/^\s*user\s*nginx;/    user nginx;/g' /etc/nginx/nginx.conf
+
+# Restart nginx
+service nginx start
