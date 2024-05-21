@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+This module fetches and displays the TODO list progress of an employee given their ID.
+
+It uses the requests module to interact with a REST API.
+"""
+
 import requests
 import sys
 
@@ -49,7 +55,7 @@ if __name__ == "__main__":
     Main entry point of the script. Expects one command-line argument: the employee ID.
     """
     if len(sys.argv) != 2:
-        print("Usage: python script.py <employee_id>")
+        print("Usage: ./todo_progress.py <employee_id>")
         sys.exit(1)
 
     try:
